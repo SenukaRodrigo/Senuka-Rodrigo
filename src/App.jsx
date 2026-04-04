@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   AnimatePresence,
-  motion,
+  motion, // eslint-disable-line no-unused-vars
   useScroll,
   useSpring,
   useTransform,
@@ -31,20 +31,24 @@ const sectionRise = {
 };
 
 const statCards = [
-  { value: "2024", label: "Started BSc (Hons) Computer Science", tone: "teal" },
   {
-    value: "4+",
-    label: "Major full stack and frontend projects",
-    tone: "violet",
+    value: "2024",
+    label: "Started BSc (Hons) in Computer Science",
+    tone: "teal",
   },
   {
-    value: "Full Stack",
-    label: "React, Next.js, Node.js, Java, Python",
+    value: "2025",
+    label: "Completed Java Programming with Distinction",
     tone: "gold",
   },
   {
-    value: "GitHub",
-    label: "Branching, pull requests, and code reviews",
+    value: "4+",
+    label: "Academic and personal software projects delivered",
+    tone: "violet",
+  },
+  {
+    value: "Git Flow",
+    label: "Team workflows: branching, pull requests, and code reviews",
     tone: "danger",
   },
 ];
@@ -52,9 +56,9 @@ const statCards = [
 const projectCards = [
   {
     title: "ReViveX",
-    stack: "JavaScript, TypeScript, HTML, Next.js",
+    stack: "JavaScript, TypeScript, HTML, Next.js, Firebase (Firestore)",
     repo: "https://github.com/ReViveX-Team-Build",
-    text: "A digital rehabilitation platform where patients track their exercises with a collaborative full stack workflow.",
+    text: "A digital rehabilitation platform where patients track their exercises, built through collaborative full stack delivery.",
     points: [
       "Team-based development using Git and GitHub",
       "Version control, branching, pull requests, and code reviews",
@@ -67,11 +71,11 @@ const projectCards = [
     title: "Estate-Agent",
     stack: "React.js, JavaScript, HTML, CSS",
     repo: "https://github.com/Kei774/University-Projects/tree/main/esateAgent",
-    text: "React-based frontend web application built using Vite for fast development and optimized builds.",
+    text: "React-based frontend web application built with Vite for fast development and optimized builds.",
     points: [
       "Modular and scalable user interface",
       "Reusable components and clean folder organization",
-      "Structured component-based architecture",
+      "Structured component-based architecture with modern frontend practices",
     ],
     icon: Cpu,
   },
@@ -89,13 +93,15 @@ const projectCards = [
   },
   {
     title: "Post Office Management System",
-    stack: "Java, SQL, XML",
-    repo: "https://github.com/Kei774/University-Projects/tree/main/Ocean%20Realm%20website%20(Group%20Project%20)",
-    text: "REST API style system for post offices, parcels, and parcel history with layered architecture and database integration.",
+    stack: "Java, SQL, XML, Spring Boot",
+    repo: "https://github.com/Kei774/University-Projects",
+    text: "Spring Boot based REST API that simulates a postal office management system managing post offices, parcels, and parcel history.",
     points: [
       "Backend development",
-      "Layered architecture and error handling",
-      "Database integration and Maven project management",
+      "Layered architecture",
+      "Database integration",
+      "Project management with Maven",
+      "Error handling and structure",
     ],
     icon: Cloud,
   },
@@ -120,23 +126,35 @@ const educationCards = [
   },
 ];
 
-const toolSkills = [
-  "Git",
-  "Microsoft Office",
-  "Documentation Tools",
-  "React",
-  "ClickUp",
-  "Figma",
-  "Next.js",
-  "Node.js",
+const languageSkills = [
   "Java",
   "Python",
+  "HTML",
+  "CSS",
+  "TypeScript",
+  "JavaScript",
   "SQL",
+  "XML",
+];
+
+const frameworkSkills = ["Next.js", "Tailwind CSS", "React.js", "Spring Boot"];
+
+const toolSkills = [
+  "Git",
+  "GitHub",
+  "Microsoft Office",
+  "Firebase (Firestore)",
+  "Documentation Tools",
+  "Notion",
+  "Figma",
 ];
 
 const softSkills = [
   "Leadership",
   "Communication",
+  "Problem Solving",
+  "Debugging Skills",
+  "Accountability",
   "Collaboration",
   "Fast Learner",
   "Time Management",
@@ -291,7 +309,7 @@ function RoleModal({ open, onClose }) {
 function ScrollBackdrop() {
   const { scrollYProgress } = useScroll();
   const sideInfoText =
-    "SENUKA RODRIGO • FULL STACK DEVELOPER • KALUTHARA, SRI LANKA • REACT • NODE.JS • JAVA • PYTHON • GITHUB: KEI774 • ";
+    "SENUKA RODRIGO • FULL STACK DEVELOPER • KALUTHARA, SRI LANKA • REACT • NEXT.JS • SPRING BOOT • GITHUB: KEI774 • ";
   const smoothScroll = useSpring(scrollYProgress, {
     stiffness: 88,
     damping: 24,
@@ -347,7 +365,7 @@ function App() {
   const [showRoleModal, setShowRoleModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const words = useMemo(
-    () => ["FULL STACK", "REACT", "NODE.JS", "BACKEND"],
+    () => ["FULL STACK", "REACT", "NEXT.JS", "SPRING BOOT"],
     [],
   );
   const [wordIndex, setWordIndex] = useState(0);
@@ -531,7 +549,7 @@ function App() {
                 style={{ marginBottom: 16 }}>
                 Experienced in Git-based team collaboration, version control,
                 and component-based frontend development with hands-on backend
-                project experience.
+                project delivery.
               </motion.p>
               <div className="stats-grid">
                 {statCards.map((card, i) => (
@@ -619,8 +637,10 @@ function App() {
                   <p className="stack-line">2025 • Distinction</p>
                   <p>
                     Completed a structured program on core Java development and
-                    object-oriented design principles, including encapsulation,
-                    inheritance, polymorphism, and abstraction.
+                    object-oriented design principles. The course covered Java
+                    syntax, control structures, data types, standard libraries,
+                    and deep application of encapsulation, inheritance,
+                    polymorphism, and abstraction.
                   </p>
                 </article>
               </div>
@@ -641,6 +661,28 @@ function App() {
               <div className="why-grid">
                 <article>
                   <ShieldCheck size={20} />
+                  <h3>Languages</h3>
+                  <div className="chip-list">
+                    {languageSkills.map((item) => (
+                      <span key={item} className="chip-item">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+                <article>
+                  <Cpu size={20} />
+                  <h3>Frameworks</h3>
+                  <div className="chip-list">
+                    {frameworkSkills.map((item) => (
+                      <span key={item} className="chip-item">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+                <article>
+                  <CheckCircle2 size={20} />
                   <h3>Tools and Technologies</h3>
                   <div className="chip-list">
                     {toolSkills.map((item) => (
@@ -669,15 +711,6 @@ function App() {
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
-                </article>
-                <article>
-                  <CheckCircle2 size={20} />
-                  <h3>Professional Focus</h3>
-                  <p>
-                    Continuing to strengthen full stack development across
-                    frontend architecture, backend systems, team collaboration,
-                    and software delivery workflows.
-                  </p>
                 </article>
               </div>
             </section>
