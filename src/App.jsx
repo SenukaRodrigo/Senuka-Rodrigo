@@ -33,22 +33,22 @@ const sectionRise = {
 const statCards = [
   {
     value: "2024",
-    label: "Started BSc (Hons) in Computer Science",
+    label: "BSc (Hons) in Computer Science started",
     tone: "teal",
   },
   {
     value: "2025",
-    label: "Completed Java Programming with Distinction",
+    label: "Java Programming course completed (Distinction)",
     tone: "gold",
   },
   {
-    value: "4+",
-    label: "Academic and personal software projects delivered",
+    value: "Team of 6",
+    label: "ReViveX delivered with collaborative Git workflows",
     tone: "violet",
   },
   {
-    value: "Git Flow",
-    label: "Team workflows: branching, pull requests, and code reviews",
+    value: "Live App",
+    label: "ReViveX deployed at revivex-frontend-prod.vercel.app",
     tone: "danger",
   },
 ];
@@ -56,46 +56,51 @@ const statCards = [
 const projectCards = [
   {
     title: "ReViveX",
-    stack: "JavaScript, TypeScript, HTML, Next.js, Firebase (Firestore)",
+    stack: "JavaScript, TypeScript, HTML, Next.js, Firebase (FireStore)",
     repo: "https://github.com/ReViveX-Team-Build",
-    text: "A digital rehabilitation platform where patients track their exercises, built through collaborative full stack delivery.",
+    repoLabel: "GitHub Link",
+    live: "https://revivex-frontend-prod.vercel.app",
+    liveLabel: "Live URL",
+    text: "A neuro-rehabilitation platform for Parkinson's and post-stroke patients where therapists monitor real-time adherence, assign exercise plans, and receive AI-driven insights. Patients track sessions, streaks, and progress via a gamified dashboard. Built with Next.js, TypeScript, and Firebase by a team of 6. Live at revivex-frontend-prod.vercel.app.",
     points: [
-      "Team-based development using Git and GitHub",
-      "Version control, branching, pull requests, and code reviews",
-      "UI development and component structuring",
-      "Worked with real project deadlines and team coordination",
+      "Developed the patient dashboard including session tracking, weekly adherence score, and XP progress system",
+      "Integrated Firebase FireStore for real-time data sync between doctor and patient portals",
+      "Built role-based UI for therapists, patients, caregivers, and admins user types",
+      "Collaborated in a team of 6 using Git branching, pull requests, and code reviews",
     ],
     icon: Brain,
+  },
+  {
+    title: "AI Chat Bot",
+    stack: "Next.js, TypeScript, JavaScript, CSS",
+    repo: null,
+    text: "Developed an AI chat bot to learn about integrating AI models with APIs, with a clean frontend structure and interactive user flow.",
+    points: [
+      "Implemented a well-organized Next.js frontend and style management",
+      "Emphasized API integration and API key security",
+      "Delivered a seamless interaction flow and responsive UI",
+    ],
+    icon: Sparkles,
   },
   {
     title: "Estate-Agent",
     stack: "React.js, JavaScript, HTML, CSS",
     repo: "https://github.com/Kei774/University-Projects/tree/main/esateAgent",
-    text: "React-based frontend web application built with Vite for fast development and optimized builds.",
+    repoLabel: "GitHub Link",
+    text: "React-based frontend web application built using Vite for fast development and optimized builds.",
     points: [
-      "Modular and scalable user interface",
-      "Reusable components and clean folder organization",
-      "Structured component-based architecture with modern frontend practices",
+      "Built a modular, scalable user interface with reusable components",
+      "Maintained clean folder organization and structured component architecture",
+      "Demonstrated modern frontend development practices",
     ],
     icon: Cpu,
   },
   {
-    title: "Ocean Realm Website",
-    stack: "HTML, CSS, JavaScript",
-    repo: "https://github.com/Kei774/University-Projects/tree/main/Ocean%20Realm%20website%20(Group%20Project%20)",
-    text: "Fully structured multi-page website with consistent navigation, layout, and styling.",
-    points: [
-      "Applied semantic HTML across pages",
-      "Organized CSS and maintained validation standards",
-      "Developed in a team environment",
-    ],
-    icon: Waves,
-  },
-  {
     title: "Post Office Management System",
-    stack: "Java, SQL, XML, Spring Boot",
+    stack: "Java, SQL, XML",
     repo: "https://github.com/Kei774/University-Projects",
-    text: "Spring Boot based REST API that simulates a postal office management system managing post offices, parcels, and parcel history.",
+    repoLabel: "GitHub Link",
+    text: "A Spring Boot based REST API that simulates a postal office management system managing post offices, parcels, and parcel history.",
     points: [
       "Backend development",
       "Layered architecture",
@@ -116,7 +121,7 @@ const educationCards = [
   },
   {
     institute: "Informatics Institute of Technology (IIT), Sri Lanka",
-    qualification: "Foundation in Information Technology (Merit)",
+    qualification: "Foundation In Information Technology (Merit)",
     period: "September 2023 - May 2024",
   },
   {
@@ -143,7 +148,7 @@ const toolSkills = [
   "Git",
   "GitHub",
   "Microsoft Office",
-  "Firebase (Firestore)",
+  "Firebase (FireStore)",
   "Documentation Tools",
   "Notion",
   "Figma",
@@ -165,6 +170,21 @@ const extracurricular = [
   "Swimming - Regular training and recreational participation",
   "Chess - Strategy based gameplay and problem solving",
   "Football - Team participation and collaboration",
+];
+
+const certificateAchievements = [
+  {
+    title: "Foundation Certificate in Higher Education (Merit)",
+    org: "Informatics Institute of Technology",
+  },
+  {
+    title: "Java Programming Professional Certificate (Distinction)",
+    org: "IIT Professional Development Unit",
+  },
+  {
+    title: "Finalist, University Category",
+    org: "SLIOT Challengers",
+  },
 ];
 
 const references = [
@@ -297,7 +317,7 @@ function RoleModal({ open, onClose }) {
             <a className="role-card role-doctor" href="tel:+94773847510">
               <Stethoscope size={24} />
               <strong>Phone</strong>
-              <span>+94 77 384 7510</span>
+              <span>+94 773847510</span>
             </a>
           </div>
         </motion.div>
@@ -309,7 +329,7 @@ function RoleModal({ open, onClose }) {
 function ScrollBackdrop() {
   const { scrollYProgress } = useScroll();
   const sideInfoText =
-    "SENUKA RODRIGO • FULL STACK DEVELOPER • KALUTHARA, SRI LANKA • REACT • NEXT.JS • SPRING BOOT • GITHUB: KEI774 • ";
+    "SENUKA RODRIGO • COMPUTER SCIENCE UNDERGRADUATE • FULL STACK ENTHUSIAST • KALUTHARA, SRI LANKA • NEXT.JS • TYPESCRIPT • FIREBASE • JAVA • SPRING BOOT • ";
   const smoothScroll = useSpring(scrollYProgress, {
     stiffness: 88,
     damping: 24,
@@ -365,7 +385,14 @@ function App() {
   const [showRoleModal, setShowRoleModal] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const words = useMemo(
-    () => ["FULL STACK", "REACT", "NEXT.JS", "SPRING BOOT"],
+    () => [
+      "FULL STACK",
+      "NEXT.JS",
+      "TYPESCRIPT",
+      "FIREBASE",
+      "JAVA",
+      "SPRING BOOT",
+    ],
     [],
   );
   const [wordIndex, setWordIndex] = useState(0);
@@ -461,6 +488,12 @@ function App() {
                 <button
                   type="button"
                   className="nav-link"
+                  onClick={() => handleNavItemClick("certificates")}>
+                  Certificates
+                </button>
+                <button
+                  type="button"
+                  className="nav-link"
                   onClick={() => handleNavItemClick("skills")}>
                   Skills
                 </button>
@@ -491,7 +524,8 @@ function App() {
                 initial="hidden"
                 animate="show"
                 variants={sectionRise}>
-                Full Stack Developer • Kaluthara, Sri Lanka
+                Computer Science Undergraduate • Full Stack Enthusiast •
+                Kaluthara, Sri Lanka
               </motion.p>
               <motion.h1 initial="hidden" animate="show" variants={sectionRise}>
                 SENUKA <span>RODRIGO.</span>
@@ -501,10 +535,10 @@ function App() {
                 animate="show"
                 variants={sectionRise}
                 className="hero-copy">
-                Motivated Software Engineering undergraduate with practical
-                experience building web applications and backend systems. Worked
-                with React, Next.js, Node.js, Java, and Python using modern
-                development workflows.
+                Computer Science undergraduate at University of Westminster
+                currently seeking a software engineering internship. Built and
+                deployed full stack applications using Next.js, TypeScript,
+                Firebase, and Java with team-based Git workflows.
               </motion.p>
               <motion.div
                 className="hero-actions"
@@ -547,9 +581,11 @@ function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 18 }}
                 style={{ marginBottom: 16 }}>
-                Experienced in Git-based team collaboration, version control,
-                and component-based frontend development with hands-on backend
-                project delivery.
+                Computer Science undergraduate at University of Westminster
+                currently seeking a software engineering internship. Built and
+                deployed full stack applications using Next.js, TypeScript,
+                Firebase, and Java. Experienced in team-based development with
+                Git workflows across projects with real users.
               </motion.p>
               <div className="stats-grid">
                 {statCards.map((card, i) => (
@@ -591,13 +627,24 @@ function App() {
                       <Icon size={22} />
                       <h3>{item.title}</h3>
                       <p className="stack-line">{item.stack}</p>
-                      <a
-                        className="repo-link"
-                        href={item.repo}
-                        target="_blank"
-                        rel="noreferrer">
-                        View Repo
-                      </a>
+                      {item.repo && (
+                        <a
+                          className="repo-link"
+                          href={item.repo}
+                          target="_blank"
+                          rel="noreferrer">
+                          {item.repoLabel || "GitHub Link"}
+                        </a>
+                      )}
+                      {item.live && (
+                        <a
+                          className="repo-link"
+                          href={item.live}
+                          target="_blank"
+                          rel="noreferrer">
+                          {item.liveLabel || "Live URL"}
+                        </a>
+                      )}
                       <p>{item.text}</p>
                       <ul className="bullet-list">
                         {item.points.map((point) => (
@@ -634,15 +681,38 @@ function App() {
                 <article>
                   <Sparkles size={20} />
                   <h3>Java Programming</h3>
-                  <p className="stack-line">2025 • Distinction</p>
+                  <p className="stack-line">2025 • Distinction 2025</p>
                   <p>
-                    Completed a structured program on core Java development and
-                    object-oriented design principles. The course covered Java
-                    syntax, control structures, data types, standard libraries,
-                    and deep application of encapsulation, inheritance,
-                    polymorphism, and abstraction.
+                    Completed a structured program focused on core Java
+                    development and object-oriented design principles. The
+                    course covered Java syntax, control structures, data types,
+                    standard libraries, and deep application of encapsulation,
+                    inheritance, polymorphism, and abstraction.
                   </p>
                 </article>
+              </div>
+            </section>
+
+            <section id="certificates" className="section block-teal">
+              <motion.p
+                className="mono-tag"
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}>
+                Certificates and Achievements
+              </motion.p>
+              <motion.h2
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}>
+                Recognitions and academic milestones.
+              </motion.h2>
+              <div className="offer-grid">
+                {certificateAchievements.map((item) => (
+                  <article key={item.title} className="offer-card">
+                    <CheckCircle2 size={22} />
+                    <h3>{item.title}</h3>
+                    <p>{item.org}</p>
+                  </article>
+                ))}
               </div>
             </section>
 
@@ -744,8 +814,21 @@ function App() {
             <footer id="contact" className="footer">
               <h2>Let&apos;s build together.</h2>
               <p>
-                Kaluthara, Sri Lanka • senukarrodrigo.07@gmail.com • +94 77 384
-                7510
+                Kaluthara, Sri Lanka • senukarrodrigo.07@gmail.com • +94
+                773847510 •{" "}
+                <a
+                  href="http://www.linkedin.com/in/senuka-rodrigo"
+                  target="_blank"
+                  rel="noreferrer">
+                  LinkedIn
+                </a>
+                •{" "}
+                <a
+                  href="https://github.com/Kei774"
+                  target="_blank"
+                  rel="noreferrer">
+                  GitHub
+                </a>
               </p>
               <div
                 style={{
