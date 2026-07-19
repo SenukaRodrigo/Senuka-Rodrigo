@@ -49,7 +49,7 @@ function ProjectCard({
 
   return (
     <TiltCard className="h-full" intensity={featured ? 5 : 7}>
-      <article className="glow-ring glass group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 sm:p-8">
+      <article className="glow-ring liquid-glass group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 sm:p-8">
         {/* Accent wash that warms up on hover */}
         <div
           className={`pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-gradient-to-br ${accent.glow} to-transparent opacity-45 blur-3xl transition-opacity duration-500 group-hover:opacity-90`}

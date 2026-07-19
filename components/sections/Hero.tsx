@@ -170,7 +170,7 @@ export function Hero() {
             {/* Glow behind the portrait */}
             <div className="absolute inset-6 rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.5),transparent_65%)] blur-3xl" />
 
-            <div className="glow-ring glass relative overflow-hidden rounded-[2rem] p-2">
+            <div className="glow-ring liquid-glass relative overflow-hidden rounded-[2rem] p-2">
               <Image
                 src="/hero.png"
                 alt=""
@@ -186,7 +186,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="glass absolute -left-4 bottom-10 rounded-2xl px-4 py-3 sm:-left-8"
+              className="liquid-glass absolute -left-4 bottom-10 rounded-2xl px-4 py-3 sm:-left-8"
             >
               <p className="font-display text-2xl font-bold text-gradient">5+</p>
               <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
@@ -197,7 +197,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="glass absolute -right-2 top-10 rounded-2xl px-4 py-3 sm:-right-6"
+              className="liquid-glass absolute -right-2 top-10 rounded-2xl px-4 py-3 sm:-right-6"
             >
               <p className="font-display text-2xl font-bold text-gradient">BSc</p>
               <p className="font-mono text-[10px] uppercase tracking-widest text-muted">

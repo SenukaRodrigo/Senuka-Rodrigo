@@ -54,7 +54,7 @@ export function Education() {
                     />
                   </span>
 
-                  <div className="glass rounded-2xl p-6">
+                  <div className="liquid-glass rounded-2xl p-6">
                     <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <h3 className="font-display text-lg font-semibold sm:text-xl">
                         {entry.school}

@@ -43,7 +43,7 @@ export function About() {
           {cards.map((card) => (
             <RevealItem key={card.title}>
               <TiltCard className="h-full">
-                <div className="glow-ring glass h-full rounded-3xl p-7">
+                <div className="glow-ring liquid-glass h-full rounded-3xl p-7">
                   <div className="mb-5 inline-flex rounded-2xl bg-gradient-to-br from-cyan-accent/20 to-violet-accent/20 p-3 ring-1 ring-white/10">
                     <card.icon className="h-5 w-5 text-cyan-accent" />
                   </div>
@@ -60,7 +60,7 @@ export function About() {
         {/* Achievements + interests */}
         <div className="mt-5 grid gap-5 lg:grid-cols-[1.4fr_0.6fr]">
           <Reveal>
-            <RevealGroup className="glass h-full rounded-3xl p-7">
+            <RevealGroup className="liquid-glass h-full rounded-3xl p-7">
               <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-violet-accent">
                 Certificates & Achievements
               </h3>
@@ -81,7 +81,7 @@ export function About() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="glass h-full rounded-3xl p-7">
+            <div className="liquid-glass h-full rounded-3xl p-7">
               <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-rose-accent">
                 Outside the editor
               </h3>

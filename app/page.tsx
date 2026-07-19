@@ -1,5 +1,6 @@
 import { AuroraBackground } from "@/components/background/AuroraBackground";
 import { Nav } from "@/components/Nav";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <AuroraBackground />
+      <SmoothScroll />
       <ScrollProgress />
       <Nav />
       <main className="flex-1">

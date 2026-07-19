@@ -71,7 +71,7 @@ export function Skills() {
         <RevealGroup className="grid gap-5 sm:grid-cols-2">
           {skillGroups.map((group) => (
             <RevealItem key={group.title}>
-              <div className="glass h-full rounded-3xl p-7">
+              <div className="liquid-glass h-full rounded-3xl p-7">
                 <h3 className="mb-5 font-mono text-xs uppercase tracking-[0.25em] text-cyan-accent">
                   {group.title}
                 </h3>
@@ -91,7 +91,7 @@ export function Skills() {
         </RevealGroup>
 
         <Reveal className="mt-5">
-          <div className="glass rounded-3xl p-7">
+          <div className="liquid-glass rounded-3xl p-7">
             <h3 className="mb-3 font-mono text-xs uppercase tracking-[0.25em] text-violet-accent">
               Course · Java Programming · 2025 · Distinction
             </h3>

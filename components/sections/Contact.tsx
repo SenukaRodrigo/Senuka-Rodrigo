@@ -12,7 +12,7 @@ export function Contact() {
     <section id="contact" className="relative px-6 py-28 sm:px-10">
       <div className="mx-auto max-w-4xl">
         <Reveal>
-          <div className="glow-ring glass relative overflow-hidden rounded-[2.5rem] px-8 py-16 text-center sm:px-14 sm:py-20">
+          <div className="glow-ring liquid-glass relative overflow-hidden rounded-[2.5rem] px-8 py-16 text-center sm:px-14 sm:py-20">
             {/* Ambient wash inside the card */}
             <motion.div
               aria-hidden
