@@ -14,13 +14,25 @@ type TiltCardProps = {
   className?: string;
   /** Max rotation in degrees at the card's edges. */
   intensity?: number;
+  /**
+   * Corner radius class, must match the radius the card content itself uses.
+   * The specular glare below is a sibling of `children`, not a descendant, so
+   * without a radius (and `overflow-hidden`) on this same wrapper, the glare
+   * paints as a sharp square that bleeds past the content's rounded corners.
+   */
+  rounded?: string;
 };
 
 /**
  * 3D tilt toward the pointer, plus a specular highlight that tracks it.
  * Falls back to a static card when the user prefers reduced motion.
  */
-export function TiltCard({ children, className = "", intensity = 8 }: TiltCardProps) {
+export function TiltCard({
+  children,
+  className = "",
+  intensity = 8,
+  rounded = "rounded-3xl",
+}: TiltCardProps) {
   const reduced = useReducedMotion();
 
   const rotateX = useSpring(useMotionValue(0), { stiffness: 220, damping: 20 });
@@ -62,12 +74,12 @@ export function TiltCard({ children, className = "", intensity = 8 }: TiltCardPr
       style={{ rotateX, rotateY, transformStyle: "preserve-3d", perspective: 900 }}
       whileHover={reduced ? undefined : { y: -6 }}
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
-      className={`relative ${className}`}
+      className={`relative overflow-hidden ${rounded} ${className}`}
     >
       {children}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-[inherit]"
+        className="pointer-events-none absolute inset-0"
         style={{ backgroundImage: glare, opacity: glareOpacity }}
       />
     </motion.div>
