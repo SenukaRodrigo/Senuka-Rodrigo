@@ -19,7 +19,7 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </nav>
           <a className="btn" href="#contact">
-            Hire me <span className="btn__arrow" aria-hidden="true">→</span>
+            Contact me <span className="btn__arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </header>
